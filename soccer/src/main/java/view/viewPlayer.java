@@ -35,21 +35,10 @@ public class viewPlayer {
                      
                      switch (decision) {
                             case 1:      
-                            
                                    
-                                  /*  int id = 0; 
-                                   String nombre = "";
-                                   String apellido = "";
-                                   int edad = 0 ;
-                                   int drosal = 0; 
-                                   String posicion = ""; */
-                                   
-
                                    System.out.println("Ingresa id del jugador:");
                                    codigoJugador = scanner.nextLine();
                                    
-
-
                                    // System.out.println("Digita el id del equipo");
                                    scanner.nextLine();
 

@@ -79,7 +79,73 @@ public class viewPlayer {
                                   
                                    break;
 
-                            case 2:
+                            case 2:   
+                                   System.out.println("Ingrese el codigo del equipo:");
+                                   codigoJugador = scanner.nextLine();    
+
+                                   jugador = controlador.jugadores.get(codigoJugador);
+
+                                   if (jugador == null) {
+                                          System.out.println("No se encontró un jugador con el código ingresado.");
+                                          break;
+                                   }
+
+                                   int choice2;
+
+                                   do {
+                                          System.out.println("Que dato deseas actualizar?");
+                                          System.out.println("1. Nombre");
+                                          System.out.println("2. Apellido");
+                                          System.out.println("3. Edad");
+                                          System.out.println("4. Dorsal");
+                                          System.out.println("5. Posicion");
+                                          System.out.println("6. Salir");
+
+                                          choice2 = scanner.nextInt();
+                                          scanner.nextLine(); // Para manejar el salto de línea después de nextInt()
+
+                                          switch (choice2) {
+                                                 case 1:
+                                                        System.out.println("Ingrese el nuevo nombre del jugador:");
+                                                        jugador.setNombre(scanner.nextLine());
+                                                 break;
+
+                                                 case 2:
+                                                        System.out.println("Ingrese el nuevo apellido:");
+                                                        jugador.setApellido(scanner.nextLine());
+                                                 break;
+
+                                                 case 3:
+                                                        System.out.println("Ingrese el nuevo apellido:");
+                                                        jugador.setEdad(scanner.nextInt());
+                                                 break;
+
+                                                 case 4:
+                                                        System.out.println("Ingrese el nuevo dorsal:");
+                                                        jugador.setDorsal(scanner.nextInt());
+                                                 break;
+
+                                                 case 5:
+                                                        System.out.println("Ingrese la nuevo posicion:");
+                                                        jugador.setPosicion(scanner.nextLine());
+                                                 break;
+
+                                                 case 6:
+                                                 break;
+
+                                                 default:
+                                                 System.out.println("Opción inválida, inténtelo de nuevo.");
+                                          }
+
+                                          System.out.println("\nDATOS ACTUALIZADOS DEL Jugador");
+                                          System.out.println("Nombre: " + jugador.getNombre());
+                                          System.out.println("Apellido: " + jugador.getApellido());
+                                          System.out.println("Edad: " + jugador.getEdad());
+                                          System.out.println("Dorsal: " + jugador.getDorsal());
+                                          System.out.println("Posicion: " + jugador.getPosicion());
+
+
+                                   } while (choice2 != 6);
                                    
                                    break;
                             case 3:

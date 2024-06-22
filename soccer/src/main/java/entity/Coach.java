@@ -11,8 +11,8 @@ public class Coach extends Person {
         this.idFederacion = idFederacion;
     }
 
-    public Coach(int id, String nombre, String apellido, int edad, int idFederacion) {
-        super(id, nombre, apellido, edad);
+    public Coach( String nombre, String apellido, int edad, int idFederacion) {
+        super(nombre, apellido, edad);
         this.idFederacion = idFederacion;
     }
 

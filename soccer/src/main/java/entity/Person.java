@@ -1,24 +1,18 @@
 package entity;
 
 public class Person {
-    private int id;
     private String nombre;
     private String apellido;
     private int edad;
     public Person() {
     }
-    public Person(int id, String nombre, String apellido, int edad) {
-        this.id = id;
+    public Person(String nombre, String apellido, int edad) {
+        
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
     }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+
     public String getNombre() {
         return nombre;
     }

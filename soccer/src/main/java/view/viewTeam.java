@@ -44,6 +44,8 @@ public class viewTeam {
 
                     controlador.equipos.put(codigoEquipo, equipo);
 
+                    System.out.println(controlador.equipos);
+
                     break;
 
                 case 2:

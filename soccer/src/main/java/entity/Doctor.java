@@ -3,6 +3,9 @@ package entity;
 public class Doctor extends Person {
     private String titulo;
     private int expYear;
+
+    public Doctor() {
+    }
     
     public Doctor(String titulo, int expYear) {
         this.titulo = titulo;

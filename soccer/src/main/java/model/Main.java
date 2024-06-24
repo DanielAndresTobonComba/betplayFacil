@@ -3,6 +3,8 @@ package model;
 
 import java.util.Scanner;
 
+import view.viewCoach;
+import view.viewDoctor;
 import view.viewPlayer;
 import view.viewTeam;
 
@@ -37,6 +39,21 @@ public class Main {
                     vp.start();
                     break;
 
+                case 3: 
+                    Controller ctrlDoctors = new Controller();
+                    viewDoctor.controlador = ctrlDoctors;
+                    viewDoctor vd = new viewDoctor();
+                    vd.start();
+                    break;
+
+                case 4: 
+                    Controller ctrlCoachs = new Controller();
+                    viewCoach.controlador = ctrlCoachs;
+                    viewCoach vc = new viewCoach();
+                    vc.start();
+
+                    break;
+
                 default:
                     System.out.println("Opción no válida o fuera de rango");
                     break;
@@ -47,7 +64,7 @@ public class Main {
             scanner.close();
         }
         
-
+        System.out.println("Volvi");
 
        // System.out.println("Jugador"+ eq.getLstJugadores().get(0).getNombre());
     }

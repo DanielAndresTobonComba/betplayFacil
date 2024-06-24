@@ -1,6 +1,7 @@
-package model;
+
 
 import java.util.Scanner;
+
 import view.viewCoach;
 import view.viewDoctor;
 import view.viewPlayer;
@@ -32,23 +33,34 @@ public class Main {
 
             switch (decision) {
                 case 1:
+                    // 1ra forma de comunicar las vistas con el controlador
+
+                    Controller ctrlTeams = new Controller();
+                    viewTeam.controlador = ctrlTeams; 
+                    // viewTeam vt = new viewTeam();
                     viewTeam vt = new viewTeam();
                     vt.start();
                     break;
 
                 case 2:
-                    viewPlayer vp = new viewPlayer();
-                    vp.start();
+                    Controller ctrlPlayers = new Controller();
+                    viewPlayer.controlador = ctrlPlayers; 
+                    // viewPlayer vp = new viewPlayer();
+                    viewPlayer.start();
                     break;
 
                 case 3:
-                    viewDoctor vd = new viewDoctor();
-                    vd.start();
+                    Controller ctrlDoctors = new Controller();
+                    viewDoctor.controlador = ctrlDoctors;
+                    //viewDoctor vd = new viewDoctor();
+                    viewDoctor.start();
                     break;
 
                 case 4:
-                    viewCoach vc = new viewCoach();
-                    vc.start();
+                    //viewCoach vc = new viewCoach();
+                    Controller ctrlCoachs = new Controller();
+                    viewCoach.controlador = ctrlCoachs;
+                    viewCoach.start();
                     break;
 
                 case 5:

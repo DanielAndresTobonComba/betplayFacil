@@ -2,14 +2,13 @@ package view;
 
 import java.util.Scanner;
 
+import Controller;
 import entity.Coach;
-
-import model.Controller;
 
 public class viewCoach {
 
 
-    public static Controller controlador = new Controller();
+    public Controller controlador;
 
     public static String start(){
 

@@ -1,5 +1,3 @@
-package model;
-
 
 import java.util.Hashtable;
 
@@ -14,3 +12,5 @@ public class Controller {
     public Hashtable <String,Coach> entrenadores = new Hashtable<>();
     public Hashtable <String,Doctor> doctores = new Hashtable<>();
 }
+
+

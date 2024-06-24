@@ -2,19 +2,27 @@ package view;
 
 import java.util.Scanner;
 
+import Controller;
 import entity.Player;
 import entity.Team;
-import model.Controller;
 
 public class viewPlayer {
 
-    public static Controller controlador = new Controller();
+    public static Controller controladorr = new Controller();
 
-    public static String start() {
+    public static Controller controlador = viewTeam.controlador;
+
+    public static void start() {
 
         Scanner scanner = new Scanner(System.in);
         String codigoJugador = "";
         int decision = 0;
+
+        Player jugador = new Player();
+        jugador.setNombre(codigoJugador);
+        jugador.setApellido(codigoJugador);
+        jugador.setEdad(25);
+        jugador.setIdEquipo("1");
 
         while (true) {
 
@@ -31,7 +39,7 @@ public class viewPlayer {
 
             switch (decision) {
                 case 1:
-                    Player jugador = new Player();
+                    
 
                     System.out.println("Ingresa id del jugador:");
                     codigoJugador = scanner.nextLine();
@@ -53,7 +61,6 @@ public class viewPlayer {
                     System.out.println("Digita la posicion");
                     jugador.setPosicion(scanner.nextLine());
 
-
                     System.out.println("Digita el id del equipo");
                     String codigoEquipo = scanner.nextLine();
                     jugador.setIdEquipo(codigoEquipo);
@@ -62,39 +69,18 @@ public class viewPlayer {
 
                     Team equipo = controlador.equipos.get(codigoEquipo);
 
-
-                    
-                    System.out.println("Codigo equipo: " + codigoEquipo);
-                    System.out.println("Equipo: " + equipo);
-                    // System.out.println("Equipo 1: " + controlador.equipos.get("1"));
+                    /* System.out.println("Codigo equipo: " + codigoEquipo);
+                    System.out.println("Equipo: " + equipo); */
 
                     if (equipo != null) {
                         controlador.jugadores.put(codigoJugador, jugador);
-
                         equipo.getLstJugadores().add(jugador); // Se añade el jugador a la lista de jugadores del equipo
-
                         System.out.println("El jugador ha sido creado exitosamente");
                     } else {
                         System.out.println("No se encontró un equipo con el código proporcionado.");
                     }
 
                     break;
-
-                    /* jugador = controlador.jugadores.get(codigoJugador);
-
-                    if (jugador != null) {
-                        System.out.println("\nDATOS DEL JUGADOR");
-                        System.out.println("Nombre: " + jugador.getNombre());
-                        System.out.println("Apellido: " + jugador.getApellido());
-                        System.out.println("Edad: " + jugador.getEdad());
-                        System.out.println("Dorsal: " + jugador.getDorsal());
-                        System.out.println("Posicion: " + jugador.getPosicion());
-                        System.out.println("IdEquipo:" + jugador.getIdEquipo());
-                    } else {
-                        System.out.println("Error al mostrar los datos del jugador");
-                    } */
-
-                    
 
                 case 2:
                     System.out.println("Ingrese el codigo del jugador:");
@@ -148,11 +134,24 @@ public class viewPlayer {
                                     jugador.setPosicion(scanner.nextLine());
                                     break;
 
-                                case 6: 
+                                case 6:
                                     System.out.println("Ingrese el id del equipo:");
-                                    jugador.setIdEquipo(scanner.nextLine());
-                                    scanner.nextLine(); 
 
+                                    String nuevoCodigoEquipo = scanner.nextLine();
+
+                                    jugador.setIdEquipo(nuevoCodigoEquipo);
+
+                                    Team nuevoEquipo = controlador.equipos.get(nuevoCodigoEquipo);
+                                    
+                                    if (nuevoEquipo != null) {
+                                        Team equipoActual = controlador.equipos.get(jugador.getIdEquipo());
+                                        if (equipoActual != null) {
+                                            equipoActual.getLstJugadores().remove(jugador);
+                                        }
+                                        nuevoEquipo.getLstJugadores().add(jugador);
+                                    } else {
+                                        System.out.println("No se encontró un equipo con el código proporcionado.");
+                                    }
                                     break;
 
                                 case 7:
@@ -175,6 +174,7 @@ public class viewPlayer {
                     }
 
                     break;
+
                 case 3:
                     System.out.println("Ingresa el codigo del jugador:");
                     codigoJugador = scanner.nextLine();
@@ -228,7 +228,7 @@ public class viewPlayer {
                     }
                     break;
                 case 6:
-                    return "";
+                    return;
                 default:
                     System.out.println("Opción inválida, inténtelo de nuevo.");
                     break;

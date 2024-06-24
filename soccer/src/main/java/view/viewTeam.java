@@ -11,7 +11,7 @@ public class viewTeam {
 
     public static Controller controlador = new Controller();
 
-    public void start() {
+    public static String start() {
 
         Scanner scanner = new Scanner(System.in);
         String codigoEquipo = null;
@@ -158,9 +158,7 @@ public class viewTeam {
 
                 case 6:
                     // Salir
-                    scanner.close();
-                    System.exit(0);
-                    break;
+                    return "";
 
                 default:
                     System.out.println("Opción inválida, inténtelo de nuevo.");

@@ -9,7 +9,7 @@ public class viewDoctor {
 
     public static Controller controlador = new Controller();
 
-    public String start() {
+    public static String start() {
 
         Scanner scanner = new Scanner(System.in);
         String codigoDoctor = "";
@@ -192,9 +192,8 @@ public class viewDoctor {
                     }
                     break;
                 case 6:
-                    scanner.close();
-                    System.exit(0);
-                    break;
+                    
+                    return "";
                 default:
                     System.out.println("Opción inválida, inténtelo de nuevo.");
                     break;

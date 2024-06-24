@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 
 import entity.Player;
+import entity.Team;
 import model.Controller;
 
 public class viewPlayer {
@@ -52,11 +53,34 @@ public class viewPlayer {
                     System.out.println("Digita la posicion");
                     jugador.setPosicion(scanner.nextLine());
 
-                    controlador.jugadores.put(codigoJugador, jugador);
 
-                    System.out.println("El jugador ha sido creado exitosamente");
+                    System.out.println("Digita el id del equipo");
+                    String codigoEquipo = scanner.nextLine();
+                    jugador.setIdEquipo(codigoEquipo);
 
-                    jugador = controlador.jugadores.get(codigoJugador);
+                    // Ingresar jugador al equipo
+
+                    Team equipo = controlador.equipos.get(codigoEquipo);
+
+
+                    
+                    System.out.println("Codigo equipo: " + codigoEquipo);
+                    System.out.println("Equipo: " + equipo);
+                    // System.out.println("Equipo 1: " + controlador.equipos.get("1"));
+
+                    if (equipo != null) {
+                        controlador.jugadores.put(codigoJugador, jugador);
+
+                        equipo.getLstJugadores().add(jugador); // Se añade el jugador a la lista de jugadores del equipo
+
+                        System.out.println("El jugador ha sido creado exitosamente");
+                    } else {
+                        System.out.println("No se encontró un equipo con el código proporcionado.");
+                    }
+
+                    break;
+
+                    /* jugador = controlador.jugadores.get(codigoJugador);
 
                     if (jugador != null) {
                         System.out.println("\nDATOS DEL JUGADOR");
@@ -65,11 +89,12 @@ public class viewPlayer {
                         System.out.println("Edad: " + jugador.getEdad());
                         System.out.println("Dorsal: " + jugador.getDorsal());
                         System.out.println("Posicion: " + jugador.getPosicion());
+                        System.out.println("IdEquipo:" + jugador.getIdEquipo());
                     } else {
                         System.out.println("Error al mostrar los datos del jugador");
-                    }
+                    } */
 
-                    break;
+                    
 
                 case 2:
                     System.out.println("Ingrese el codigo del jugador:");
@@ -89,7 +114,8 @@ public class viewPlayer {
                             System.out.println("3. Edad");
                             System.out.println("4. Dorsal");
                             System.out.println("5. Posicion");
-                            System.out.println("6. Salir");
+                            System.out.println("6. Equipo");
+                            System.out.println("7. Salir");
 
                             choice2 = scanner.nextInt();
                             scanner.nextLine(); // Para manejar el salto de línea después de nextInt()
@@ -122,7 +148,14 @@ public class viewPlayer {
                                     jugador.setPosicion(scanner.nextLine());
                                     break;
 
-                                case 6:
+                                case 6: 
+                                    System.out.println("Ingrese el id del equipo:");
+                                    jugador.setIdEquipo(scanner.nextLine());
+                                    scanner.nextLine(); 
+
+                                    break;
+
+                                case 7:
                                     break;
 
                                 default:
@@ -136,8 +169,9 @@ public class viewPlayer {
                             System.out.println("Edad: " + jugador.getEdad());
                             System.out.println("Dorsal: " + jugador.getDorsal());
                             System.out.println("Posicion: " + jugador.getPosicion());
+                            System.out.println("IdEquipo:" + jugador.getIdEquipo());
 
-                        } while (choice2 != 6);
+                        } while (choice2 != 7);
                     }
 
                     break;
@@ -154,6 +188,7 @@ public class viewPlayer {
                         System.out.println("Edad: " + jugador.getEdad());
                         System.out.println("Dorsal: " + jugador.getDorsal());
                         System.out.println("Posicion: " + jugador.getPosicion());
+                        System.out.println("IdEquipo:" + jugador.getIdEquipo());
                     } else {
                         System.out.println("El codigo del jugador no existe");
                     }
@@ -172,6 +207,7 @@ public class viewPlayer {
                         System.out.println("Edad: " + jugador.getEdad());
                         System.out.println("Dorsal: " + jugador.getDorsal());
                         System.out.println("Posicion: " + jugador.getPosicion());
+                        System.out.println("IdEquipo:" + jugador.getIdEquipo());
                     } else {
                         System.out.println("El codigo del jugador no existe");
                     }
@@ -188,6 +224,7 @@ public class viewPlayer {
                         System.out.println("Edad: " + jugador.getEdad());
                         System.out.println("Dorsal: " + jugador.getDorsal());
                         System.out.println("Posicion: " + jugador.getPosicion());
+                        System.out.println("IdEquipo:" + jugador.getIdEquipo());
                     }
                     break;
                 case 6:

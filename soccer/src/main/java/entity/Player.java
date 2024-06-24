@@ -3,6 +3,8 @@ package entity;
 public class Player extends Person {
     private int dorsal;
     private String posicion;
+    private String idEquipo;
+    
     public Player() {
         super();
     }
@@ -10,7 +12,7 @@ public class Player extends Person {
         this.dorsal = dorsal;
         this.posicion = posicion;
     }
-    public Player(String nombre, String apellido, int edad, int dorsal, String posicion) {
+    public Player(String nombre, String apellido, int edad, int dorsal, String posicion , String idEquipo) {
         super(nombre, apellido, edad);
         this.dorsal = dorsal;
         this.posicion = posicion;
@@ -26,6 +28,13 @@ public class Player extends Person {
     }
     public void setPosicion(String posicion) {
         this.posicion = posicion;
+    }
+
+    public String getIdEquipo() {
+        return idEquipo;
+    }
+    public void setIdEquipo(String idEquipo) {
+        this.idEquipo = idEquipo;
     }
 
     

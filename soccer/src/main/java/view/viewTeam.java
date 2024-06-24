@@ -1,7 +1,7 @@
 package view;
 
+
 import java.lang.ModuleLayer.Controller;
-//import java.lang.ModuleLayer.Controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Set;
@@ -22,6 +22,7 @@ public class viewTeam {
         equipo.setNombre("Bucaros");
         equipo.setCiudad("Bucaramanga");
         controlador.equipos.put("1", equipo);
+        
 
         System.out.println(controlador.equipos);
         System.out.println(controlador.jugadores);

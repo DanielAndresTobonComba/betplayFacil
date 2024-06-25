@@ -35,6 +35,9 @@ public static void start() {
     controlador.jugadores.put("1", jugador);
 
     while (true) {
+        System.out.println("=============================");
+        System.out.println("\tMenu Jugadores");
+        System.out.println("=============================\n");
 
         System.out.println("1. Ingresar Jugador");
         System.out.println("2. Actualizar Jugador");
@@ -60,6 +63,9 @@ public static void start() {
                     } else {
                         System.out.println("NO HAY DATOS:" + datosEquipos.equipos.size());
                     } */
+                    System.out.println("=============================");
+                    System.out.println("\nIngresar Jugador");
+                    System.out.println("=============================\n");
 
                     System.out.println("Ingresa id del jugador:");
                     codigoJugador = scanner.nextLine();
@@ -114,6 +120,10 @@ public static void start() {
                 break;
 
             case 2:
+                System.out.println("=============================");
+                System.out.println("\nModificar Jugador");
+                System.out.println("=============================\n");
+
                 System.out.println("Ingrese el codigo del jugador:");
                 codigoJugador = scanner.nextLine();
 
@@ -209,13 +219,19 @@ public static void start() {
                 break;
 
             case 3:
+                System.out.println("=============================");
+                System.out.println("\tBuscar Jugador");
+                System.out.println("=============================\n");
+
                 System.out.println("Ingresa el codigo del jugador:");
                 codigoJugador = scanner.nextLine();
 
                 jugador = controlador.jugadores.get(codigoJugador);
 
                 if (jugador != null) {
+                    System.out.println("===============================");
                     System.out.println("\nDATOS DEL JUGADOR");
+                    System.out.println("===============================\n");
                     System.out.println("Nombre: " + jugador.getNombre());
                     System.out.println("Apellido: " + jugador.getApellido());
                     System.out.println("Edad: " + jugador.getEdad());
@@ -234,7 +250,9 @@ public static void start() {
                 jugador = controlador.jugadores.remove(codigoJugador);
 
                 if (jugador != null) {
+                    System.out.println("===============================");
                     System.out.println("\nDATOS DEL JUGADOR ELIMINADO");
+                    System.out.println("===============================\n");
                     System.out.println("Nombre: " + jugador.getNombre());
                     System.out.println("Apellido: " + jugador.getApellido());
                     System.out.println("Edad: " + jugador.getEdad());
@@ -247,21 +265,29 @@ public static void start() {
 
                 break;
             case 5:
+                System.out.println("=================================");
                 System.out.println("LISTA DE TODOS LOS JUGADORES");
+                System.out.println("=================================\n");
                 
                 //System.out.println(controlador.equipos.contains("1")); 
+                System.out.printf("%-5s %-10s %-10s %-5s %-5s %-10s %-5s\n", "Código", "Nombre", "Apellido" , "Edad" , "Dorsal" , "Posicion" , "IdEquipo");
+                System.out.println("------------------------------------------------");
+
 
                 for (String key : controlador.jugadores.keySet()) {
                     jugador = controlador.jugadores.get(key);
-                    System.out.println("\nDATOS DEL JUGADOR");
-                    System.out.println("ID: " + key);
+                    
+                    System.out.printf("%-5s %-10s %-10s %-5s %-5s %-10s %-5s" , key , jugador.getNombre(),jugador.getApellido(),jugador.getEdad(),jugador.getDorsal(),jugador.getPosicion(),jugador.getIdEquipo());
+                    
+                    /* System.out.println("ID: " + key);
                     System.out.println("Nombre: " + jugador.getNombre());
                     System.out.println("Apellido: " + jugador.getApellido());
                     System.out.println("Edad: " + jugador.getEdad());
                     System.out.println("Dorsal: " + jugador.getDorsal());
                     System.out.println("Posicion: " + jugador.getPosicion());
-                    System.out.println("IdEquipo:" + jugador.getIdEquipo());
+                    System.out.println("IdEquipo:" + jugador.getIdEquipo()); */
                 } 
+                scanner.nextLine();
                 break;
             case 6:
                 return;

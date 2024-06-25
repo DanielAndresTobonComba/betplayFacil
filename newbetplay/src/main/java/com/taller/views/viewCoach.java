@@ -255,17 +255,29 @@ public class viewCoach {
 
                     break;
                 case 5:
-                    System.out.println("LISTA DE TODOS LOS COACHS");
+
+
+                    System.out.println("-----------------------------------------------------------------------------");
+                    System.out.println("\t\tLISTA DE TODOS LOS COACHS");
+                    System.out.println("-----------------------------------------------------------------------------");
+                    System.out.printf("%-10s %-15s %-15s %-10s %-10s %-10s\n"
+                    , "ID", "Nombre", "Apellido" , "Edad" , "Federacion" , "idEquipo");
+                    
+
+                    System.out.println();
                     for (String key : controlador.entrenadores.keySet()) {
                         coach = controlador.entrenadores.get(key);
 
-                        System.out.println("\nDATOS DEL LOS DOCTORES");
+                        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-10s\n", key, coach.getNombre(), coach.getApellido() , coach.getEdad() , coach.getIdFederacion() , coach.getIdEquipo());
+
+/*                        System.out.println("\nDATOS DEL LOS DOCTORES");
                         System.out.println("ID: " + key);
                         System.out.println("Nombre: " + coach.getNombre());
                         System.out.println("Apellido: " + coach.getApellido());
                         System.out.println("Edad: " + coach.getEdad());
-                        System.out.println("Federacion: " + coach.getIdFederacion());
+                        System.out.println("Federacion: " + coach.getIdFederacion()); */
                     }
+                    scanner.nextLine();
                     break;
                 case 6:
                     

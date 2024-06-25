@@ -93,6 +93,9 @@ public static void start() {
                     System.out.println("Equipo: " + equipo); 
  */
                     if (equipo != null) {
+
+                        
+
                         controlador.jugadores.put(codigoJugador, jugador);
                         boolean insertado = equipo.getLstJugadores().add(jugador);// Se añade el jugador a la lista de jugadores del equipo
 

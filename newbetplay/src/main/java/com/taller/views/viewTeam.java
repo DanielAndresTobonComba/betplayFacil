@@ -218,7 +218,11 @@ public static void start() {
                 Team eliminarEquipo = controlador.equipos.remove(codigoEquipo);
 
                 if (eliminarEquipo != null) {
+
+                    System.out.println("=============================");
                     System.out.println("El equipo ha sido eliminado.");
+                    System.out.println("=============================\n");
+
                     System.out.println("Nombre: " + eliminarEquipo.getNombre());
                     System.out.println("Ciudad: " + eliminarEquipo.getCiudad());
 

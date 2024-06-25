@@ -41,16 +41,16 @@ public class Main {
             System.out.println("    \tMENU PRINCIPAL");
             System.out.println("=================================");
 
-            System.out.println("\n1. Menu Equipos");
-            System.out.println("2. Menu Jugadores");
-            System.out.println("3. Menu Doctores");
-            System.out.println("4. Menu Coachs");
+            System.out.println("\n1. Gestor Equipos");
+            System.out.println("2. Gestor Jugadores");
+            System.out.println("3. Gestor Doctores");
+            System.out.println("4. Gestor Coachs");
             System.out.println("5. Finalizar Programa");
             
-            System.out.println("\nDigita el menu a escoger:");
+            System.out.print("\nDigita el menu a escoger: ");
             
             while (!scanner.hasNextInt()) {
-                System.out.println("Por favor, ingresa un número válido.");
+                System.out.print("Por favor, ingresa un número válido: ");
                 scanner.next(); // Desechar entrada no válida
             }
             decision = scanner.nextInt();

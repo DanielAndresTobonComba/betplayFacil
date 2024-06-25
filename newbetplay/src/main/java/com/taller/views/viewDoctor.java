@@ -36,6 +36,9 @@ public class viewDoctor {
         System.out.println(controlador.doctores.get("1").getNombre()); */
 
         while (true) {
+            System.out.println("=============================");
+            System.out.println("\tMenu Doctores");
+            System.out.println("=============================\n");
 
             System.out.println("1. Ingresar Doctor");
             System.out.println("2. Actualizar Doctor");
@@ -50,6 +53,10 @@ public class viewDoctor {
 
             switch (decision) {
                 case 1:
+                    System.out.println("=============================");
+                    System.out.println("\tCrear Doctor");
+                    System.out.println("=============================\n");
+
                     System.out.println("Ingresa id del doctor:");
                     codigoDoctor = scanner.nextLine();
 
@@ -82,14 +89,19 @@ public class viewDoctor {
                         controlador.doctores.put(codigoDoctor, doctor); // Agregar el doctor al controlador
                         equipo.getLstMasajistas().add(doctor); // Agregar el doctor al equipo
                         System.out.println("El doctor ha sido creado exitosamente");
+                        scanner.nextLine();
 
                     } else {
                         System.out.println("No se encontró un equipo con el código proporcionado.");
+                        scanner.nextLine();
                     }
 
                     break;
 
                 case 2:
+                    System.out.println("=============================");
+                    System.out.println("\tModificar Doctor");
+                    System.out.println("=============================\n");
                     System.out.println("Ingrese el codigo del doctor:");
                     codigoDoctor = scanner.nextLine();
 
@@ -111,6 +123,7 @@ public class viewDoctor {
                             System.out.println("7. Salir");
 
                             choice2 = scanner.nextInt();
+                            System.out.print("Opcion: "); 
                             scanner.nextLine(); // Para manejar el salto de línea después de nextInt()
 
                             switch (choice2) {
@@ -194,18 +207,30 @@ public class viewDoctor {
                     doctor = controlador.doctores.get(codigoDoctor);
 
                     if (doctor != null) {
-                        Team equipoDoctor = datosEquipos.equipos.get(doctor.getIdEquipo());
-                        System.out.println("\nDATOS DEL DOCTOR");
+
+                        System.out.println("=============================");
+                        System.out.println("\tBuscar Doctor");
+                        System.out.println("=============================\n");
+
+                        
+
+                        System.out.println("===============================");
+                        System.out.println("\n\tDATOS DEL DOCTOR");
+                        System.out.println("===============================");
+
                         System.out.println("Nombre: " + doctor.getNombre());
                         System.out.println("Apellido: " + doctor.getApellido());
                         System.out.println("Edad: " + doctor.getEdad());
                         System.out.println("Titulo: " + doctor.getTitulo());
                         System.out.println("Años de Experiencia: " + doctor.getExpYear());
-                        if (equipoDoctor != null) {
+                        scanner.nextLine();
+
+                        Team equipoDoctor = datosEquipos.equipos.get(doctor.getIdEquipo());
+                        /* if (equipoDoctor != null) {
                             System.out.println("Equipo: " + equipoDoctor.getNombre());
                         } else {
                             System.out.println("El doctor no está asignado a ningún equipo.");
-                        }
+                        } */
                     } else {
                         System.out.println("El codigo del doctor no existe");
                     }
@@ -213,6 +238,10 @@ public class viewDoctor {
                     break;
 
                 case 4:
+
+                    System.out.println("===============================");
+                    System.out.println("\n\tELIMINAR DOCTOR");
+                    System.out.println("===============================");
                     System.out.println("Ingresa el codigo del doctor:");
                     codigoDoctor = scanner.nextLine();
 
@@ -224,7 +253,10 @@ public class viewDoctor {
                             equipoEliminar.getLstMasajistas().remove(doctor);
                         }
 
+                        System.out.println("===============================");
                         System.out.println("\nDATOS DEL DOCTOR ELIMINADO");
+                        System.out.println("===============================");
+
                         System.out.println("Nombre: " + doctor.getNombre());
                         System.out.println("Apellido: " + doctor.getApellido());
                         System.out.println("Edad: " + doctor.getEdad());
@@ -237,18 +269,32 @@ public class viewDoctor {
                     break;
 
                 case 5:
-                    System.out.println("LISTA DE TODOS LOS DOCTORES");
-                    for (String key : controlador.doctores.keySet()) {
-                        doctor = controlador.doctores.get(key);
 
-                        System.out.println("\nDATOS DE LOS DOCTORES");
-                        System.out.println("ID: " + key);
-                        System.out.println("Nombre: " + doctor.getNombre());
-                        System.out.println("Apellido: " + doctor.getApellido());
-                        System.out.println("Edad: " + doctor.getEdad());
-                        System.out.println("Titulo: " + doctor.getTitulo());
-                        System.out.println("Años de Experiencia: " + doctor.getExpYear());
+                        System.out.println("--------------------------------------------------------------------------");
+                        System.out.println("\tLISTA DE TODOS LOS DOCTORES:");
+                        System.out.println("--------------------------------------------------------------------------");
 
+                        System.out.printf("%-10s %-10s %-10s %-15s %-10s %-10s\n", "Código", "Nombre", "Apellido" , "Edad" , "Titulo" , "Experiencia");
+
+                        System.out.println("--------------------------------------------------------------------------");
+                        
+                        for (String key : controlador.doctores.keySet()) {
+
+                            doctor = controlador.doctores.get(key);
+
+
+
+                            System.out.printf("%-10s %-10s %-10s %-10s %-15s %-10s" , key , doctor.getNombre(), doctor.getApellido(),doctor.getEdad(),doctor.getTitulo(),doctor.getExpYear());
+
+
+                            /* System.out.println("\nDATOS DE LOS DOCTORES");
+                            System.out.println("ID: " + key);
+                            System.out.println("Nombre: " + doctor.getNombre());
+                            System.out.println("Apellido: " + doctor.getApellido());
+                            System.out.println("Edad: " + doctor.getEdad());
+                            System.out.println("Titulo: " + doctor.getTitulo());
+                            System.out.println("Años de Experiencia: " + doctor.getExpYear());
+ */
                         //Team equipoDoc = datosEquipos.equipos.get(doctor.getIdEquipo());
 
                         /* if (equipoDoc != null) {
@@ -257,6 +303,8 @@ public class viewDoctor {
                             System.out.println("El doctor no está asignado a ningún equipo.");
                         } */
                     }
+
+                    scanner.nextLine();
                     break;
 
                 case 6:

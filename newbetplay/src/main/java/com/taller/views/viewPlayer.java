@@ -143,6 +143,7 @@ public static void start() {
                         System.out.println("5. Posicion");
                         System.out.println("6. Equipo");
                         System.out.println("7. Salir");
+                    
 
                         choice2 = scanner.nextInt();
                         scanner.nextLine(); // Para manejar el salto de línea después de nextInt()
@@ -238,6 +239,7 @@ public static void start() {
                     System.out.println("Dorsal: " + jugador.getDorsal());
                     System.out.println("Posicion: " + jugador.getPosicion());
                     System.out.println("IdEquipo:" + jugador.getIdEquipo());
+                    scanner.nextLine();
                 } else {
                     System.out.println("El codigo del jugador no existe");
                 }
@@ -259,6 +261,7 @@ public static void start() {
                     System.out.println("Dorsal: " + jugador.getDorsal());
                     System.out.println("Posicion: " + jugador.getPosicion());
                     System.out.println("IdEquipo:" + jugador.getIdEquipo());
+                    scanner.nextLine();
                 } else {
                     System.out.println("El codigo del jugador no existe");
                 }
@@ -277,7 +280,7 @@ public static void start() {
                 for (String key : controlador.jugadores.keySet()) {
                     jugador = controlador.jugadores.get(key);
                     
-                    System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s" , key , jugador.getNombre(),jugador.getApellido(),jugador.getEdad(),jugador.getDorsal(),jugador.getPosicion(),jugador.getIdEquipo());
+                    System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s" , key , jugador.getNombre(),jugador.getApellido(),jugador.getEdad(),jugador.getDorsal(),jugador.getPosicion(),jugador.getIdEquipo() + "\n");
                     
                     /* System.out.println("ID: " + key);
                     System.out.println("Nombre: " + jugador.getNombre());

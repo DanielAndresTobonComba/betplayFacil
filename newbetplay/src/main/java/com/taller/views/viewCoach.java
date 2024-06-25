@@ -32,7 +32,9 @@ public class viewCoach {
 
 
         while (true) {
-
+            System.out.println("=============================");
+            System.out.println("\tMenu Coach");
+            System.out.println("=============================\n");
             System.out.println("1. Ingresar Coach");
             System.out.println("2. Actualizar Coach");
             System.out.println("3. Buscar Coach");
@@ -46,6 +48,9 @@ public class viewCoach {
 
             switch (decision) {
                 case 1:
+                    System.out.println("=============================");
+                    System.out.println("\tIngresar Coach");
+                    System.out.println("=============================\n");
 
                     System.out.println("Ingresa id del Coach:");
                     codigoCoach = scanner.nextLine();
@@ -109,6 +114,9 @@ public class viewCoach {
                     break;
 
                 case 2:
+                    System.out.println("=============================");
+                    System.out.println("\nModificar Coach");
+                    System.out.println("=============================\n");
 
                     System.out.println("Ingrese el codigo del coach:");
                     codigoCoach = scanner.nextLine();
@@ -201,6 +209,10 @@ public class viewCoach {
 
                     break;
                 case 3:
+                    System.out.println("=============================");
+                    System.out.println("\nBuscar Coach");
+                    System.out.println("=============================\n");
+
                     System.out.println("Ingresa el codigo del coach:");
                     codigoCoach = scanner.nextLine();
 
@@ -219,13 +231,20 @@ public class viewCoach {
 
                     break;
                 case 4:
+                    System.out.println("=============================");
+                    System.out.println("\nEliminar Coach");
+                    System.out.println("=============================\n");
+
                     System.out.println("Ingresa el codigo del coach:");
                     codigoCoach = scanner.nextLine();
 
                     coach = controlador.entrenadores.remove(codigoCoach);
 
                     if (coach != null) {
-                        System.out.println("\nDATOS DEL COACH ELIMINADO");
+                        System.out.println("=============================");
+                        System.out.println("\nEl coach  ha sido eliminado");
+                        System.out.println("=============================\n");
+    
                         System.out.println("Nombre: " + coach.getNombre());
                         System.out.println("Apellido: " + coach.getApellido());
                         System.out.println("Edad: " + coach.getEdad());

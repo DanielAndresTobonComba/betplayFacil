@@ -270,14 +270,14 @@ public static void start() {
                 System.out.println("=================================\n");
                 
                 //System.out.println(controlador.equipos.contains("1")); 
-                System.out.printf("%-5s %-10s %-10s %-5s %-5s %-10s %-5s\n", "Código", "Nombre", "Apellido" , "Edad" , "Dorsal" , "Posicion" , "IdEquipo");
-                System.out.println("------------------------------------------------");
+                System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s\n", "Código", "Nombre", "Apellido" , "Edad" , "Dorsal" , "Posicion" , "IdEquipo");
+                System.out.println("------------------------------------------------------------------------------\n");
 
 
                 for (String key : controlador.jugadores.keySet()) {
                     jugador = controlador.jugadores.get(key);
                     
-                    System.out.printf("%-5s %-10s %-10s %-5s %-5s %-10s %-5s" , key , jugador.getNombre(),jugador.getApellido(),jugador.getEdad(),jugador.getDorsal(),jugador.getPosicion(),jugador.getIdEquipo());
+                    System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %-10s" , key , jugador.getNombre(),jugador.getApellido(),jugador.getEdad(),jugador.getDorsal(),jugador.getPosicion(),jugador.getIdEquipo());
                     
                     /* System.out.println("ID: " + key);
                     System.out.println("Nombre: " + jugador.getNombre());
